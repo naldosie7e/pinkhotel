@@ -1,0 +1,64 @@
+{
+    "fields": [
+        {
+            "name": "id_hotel",
+            "type": "select",
+            "options": {
+                "": "Seleccione"
+            }
+        },
+        {
+            "name": "codigo",
+            "type": "string"
+        },
+        {
+            "name": "direccion",
+            "type": "string"
+        },
+        {
+            "name": "fecha_creacion",
+            "type": "date"
+        },
+        {
+            "name": "telefono",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "id_hotel",
+            "references": "id",
+            "on": "info_hotels",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "hotel",
+            "type": "belongsTo",
+            "class": "App\\Models\\InfoHotel"
+        }
+    ],
+    "validations": [
+        {
+            "field": "id_hotel",
+            "rules": "required"
+        },
+        {
+            "field": "codigo",
+            "rules": "required"
+        },
+        {
+            "field": "direccion",
+            "rules": "required"
+        },
+        {
+            "field": "fecha_creacion",
+            "rules": "required"
+        },
+        {
+            "field": "telefono",
+            "rules": "required"
+        }
+    ]
+}

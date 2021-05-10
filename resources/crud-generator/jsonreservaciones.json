@@ -1,0 +1,70 @@
+{
+    "fields": [
+        {
+            "name": "id_reservacion",
+            "type": "select",
+            "options": {
+                "": "Seleccione"
+            }
+        },
+        {
+            "name": "pago_parcial",
+            "type": "boolean"
+        },
+        {
+            "name": "valor_pago",
+            "type": "integer"
+        },
+        {
+            "name": "fecha_pago",
+            "type": "date"
+        },
+        {
+            "name": "medio_pago",
+            "type": "select",
+            "options": {
+                "": "Seleccione",
+                "ef": "Efectivo",
+                "tc": "Tarjeta de credito",
+                "td": "Tarjeta debito",
+                "tb": "Transferencia bancaria"
+            }
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "id_reservacion",
+            "references": "id",
+            "on": "reservaciones"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "reservacion",
+            "type": "belongsTo",
+            "class": "App\\Models\\Reservacione"
+        }
+    ],
+    "validations": [
+        {
+            "field": "id_reservacion",
+            "rules": "required"
+        },
+        {
+            "field": "pago_parcial",
+            "rules": "required"
+        },
+        {
+            "field": "valor_pago",
+            "rules": "required"
+        },
+        {
+            "field": "fecha_pago",
+            "rules": "required"
+        },
+        {
+            "field": "medio_pago",
+            "rules": "required"
+        }
+    ]
+}

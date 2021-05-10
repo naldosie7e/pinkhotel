@@ -1,0 +1,55 @@
+{
+    "fields": [
+        {
+            "name": "id_sucursal",
+            "type": "select",
+            "options": {
+                "": "Seleccione"
+            }
+        },
+        {
+            "name": "clasificacion",
+            "type": "select",
+            "options": {
+                "": "Seleccione",
+                "1": "Sencilla",
+                "2": "Doble",
+                "3": "Suite",
+                "4": "Presidencial"
+            }
+        },
+        {
+            "name": "valor_dia",
+            "type": "integer"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "id_sucursal",
+            "references": "id",
+            "on": "sucursales",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "hotel",
+            "type": "belongsTo",
+            "class": "App\\Models\\Sucursale"
+        }
+    ],
+    "validations": [
+        {
+            "field": "id_sucursal",
+            "rules": "required"
+        },
+        {
+            "field": "clasificacion",
+            "rules": "required"
+        },
+        {
+            "field": "valor_dia",
+            "rules": "required"
+        }
+    ]
+}
